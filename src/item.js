@@ -64,20 +64,10 @@ export class Item {
   }
 
   updateQualityAfterExpired() {
-    if (!this.isAgedBrie()) {
-      if (!this.isBackstagePasses()) {
-        if (this.quality > 0) {
-          if (!this.isSulfuras()) {
-            this.quality = this.quality - 1
-          }
-        }
-      } else {
-        this.quality = this.quality - this.quality
-      }
-    } else {
-      if (this.quality < 50) {
-        this.quality = this.quality + 1
-      }
+    if (this.quality <= 0) {
+      return
     }
+
+    this.quality = this.quality - 1
   }
 }
