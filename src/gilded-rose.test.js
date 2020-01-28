@@ -29,6 +29,20 @@ describe('GildedRoseTest', () => {
     })
   })
 
+  describe('#decreaseQuality', () => {
+    it('should decrease 2 quality', () => {
+      const item = new Item('foo', 1, 10)
+      item.decreaseQuality(2)
+      expect(item.quality).toEqual(8)
+    })
+
+    it('should quality always greater than or equal to 0', () => {
+      const item = new Item('foo', 1, 10)
+      item.decreaseQuality(11)
+      expect(item.quality).toEqual(0)
+    })
+  })
+
   it('should match safety net', () => {
     const items = [
       new Item('+5 Dexterity Vest', 10, 20), //
