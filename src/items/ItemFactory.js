@@ -1,19 +1,17 @@
-import { Item } from '../item'
+import { AgedBrie } from './AgedBrie'
+import { Sulfuras } from './Sulfuras'
+import { BackstagePass } from './BackstagePass'
 
 export class ItemFactory {
   static createAgedBrie(sellIn, quality) {
-    return new Item('Aged Brie', sellIn, quality)
+    return new AgedBrie(sellIn, quality)
   }
 
   static createSulfuras(sellIn, quality) {
-    return new Item('Sulfuras, Hand of Ragnaros', sellIn, quality)
+    return new Sulfuras(sellIn, quality)
   }
 
   static createBackstagePass(sellIn, quality) {
-    return new Item(
-      'Backstage passes to a TAFKAL80ETC concert',
-      sellIn,
-      quality
-    )
+    return new BackstagePass(sellIn, quality)
   }
 }
