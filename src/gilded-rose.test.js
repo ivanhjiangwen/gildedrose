@@ -7,7 +7,7 @@ describe('GildedRoseTest', () => {
     const items = [new Item('foo', 1, 5)]
 
     const app = new GildedRose(items)
-    app.update_quality()
+    app.passOneDay()
 
     expect(app.items[0].name).toEqual('foo')
     expect(app.items[0].quality).toEqual(4)
@@ -39,7 +39,7 @@ describe('GildedRoseTest', () => {
         result.push(item.toString())
       }
       result.push('')
-      app.update_quality()
+      app.passOneDay()
     }
 
     const safetyOutput = readFileSync('src/fixtures/app_output.txt', 'utf-8')

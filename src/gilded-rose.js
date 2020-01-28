@@ -5,9 +5,9 @@ export class GildedRose {
     this.items = items
   }
 
-  update_quality() {
-    for (let i = 0; i < this.items.length; i++) {
-      this.items[i].update_quality()
+  passOneDay() {
+    for (const item of this.items) {
+      item.passOneDay()
     }
   }
 }
