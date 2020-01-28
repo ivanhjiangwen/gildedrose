@@ -1,18 +1,18 @@
 export class Item {
   name
-  sell_in
+  sellIn
   quality
 
-  constructor(name, sell_in, quality) {
+  constructor(name, sellIn, quality) {
     this.name = name
-    this.sell_in = sell_in
+    this.sellIn = sellIn
     this.quality = quality
   }
 
   passOneDay() {
     this.updateQualityAfterOneDay()
     this.updateSellInAfterOneDay()
-    if (this.sell_in < 0) {
+    if (this.sellIn < 0) {
       this.updateQualityAfterExpired()
     }
   }
@@ -28,12 +28,12 @@ export class Item {
       if (this.quality < 50) {
         this.quality = this.quality + 1
         if (this.isBackstagePasses()) {
-          if (this.sell_in < 11) {
+          if (this.sellIn < 11) {
             if (this.quality < 50) {
               this.quality = this.quality + 1
             }
           }
-          if (this.sell_in < 6) {
+          if (this.sellIn < 6) {
             if (this.quality < 50) {
               this.quality = this.quality + 1
             }
@@ -56,11 +56,11 @@ export class Item {
   }
 
   toString() {
-    return `${this.name}, ${this.sell_in}, ${this.quality}`
+    return `${this.name}, ${this.sellIn}, ${this.quality}`
   }
 
   updateSellInAfterOneDay() {
-    this.sell_in = this.sell_in - 1
+    this.sellIn = this.sellIn - 1
   }
 
   updateQualityAfterExpired() {

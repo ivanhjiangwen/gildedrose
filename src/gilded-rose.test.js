@@ -12,7 +12,7 @@ describe('GildedRoseTest', () => {
 
     expect(app.items[0].name).toEqual('foo')
     expect(app.items[0].quality).toEqual(4)
-    expect(app.items[0].sell_in).toEqual(0)
+    expect(app.items[0].sellIn).toEqual(0)
   })
 
   it('should match safety net', () => {
