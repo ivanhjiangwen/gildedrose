@@ -9,4 +9,9 @@ export class Conjured extends Item {
     this.decreaseQuality()
     this.decreaseQuality()
   }
+
+  updateQualityAfterExpired() {
+    this.decreaseQuality()
+    this.decreaseQuality()
+  }
 }

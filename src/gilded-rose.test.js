@@ -16,10 +16,16 @@ describe('GildedRoseTest', () => {
   })
 
   describe('Conjured', () => {
-    it('decrease quality double times for normal item', () => {
+    it('decrease quality double times for normal item before expired', () => {
       const conjured = ItemFactory.createConjured(2, 4)
       conjured.passOneDay()
       expect(conjured.quality).toEqual(2)
+    })
+
+    it('decrease quality double times for normal item after expired', () => {
+      const conjured = ItemFactory.createConjured(0, 5)
+      conjured.passOneDay()
+      expect(conjured.quality).toEqual(1)
     })
   })
 
