@@ -6,14 +6,10 @@ export class AgedBrie extends Item {
   }
 
   updateQualityAfterOneDay() {
-    if (this.quality < 50) {
-      this.quality = this.quality + 1
-    }
+    this.increaseQuality()
   }
 
   updateQualityAfterExpired() {
-    if (this.quality < 50) {
-      this.quality = this.quality + 1
-    }
+    this.increaseQuality()
   }
 }
