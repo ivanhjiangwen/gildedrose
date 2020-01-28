@@ -8,4 +8,6 @@ export class Sulfuras extends Item {
   updateSellInAfterOneDay() {}
 
   updateQualityAfterExpired() {}
+
+  updateQualityAfterOneDay() {}
 }

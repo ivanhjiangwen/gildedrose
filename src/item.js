@@ -19,22 +19,8 @@ export class Item {
 
   updateQualityAfterOneDay() {
     if (this.quality > 0) {
-      if (!this.isSulfuras()) {
-        this.quality = this.quality - 1
-      }
+      this.quality = this.quality - 1
     }
-  }
-
-  isAgedBrie() {
-    return this.name === 'Aged Brie'
-  }
-
-  isBackstagePasses() {
-    return this.name === 'Backstage passes to a TAFKAL80ETC concert'
-  }
-
-  isSulfuras() {
-    return this.name === 'Sulfuras, Hand of Ragnaros'
   }
 
   toString() {
