@@ -10,7 +10,10 @@ export class ItemFactory {
   }
 
   static createBackstagePass(sellIn, quality) {
-    return new Item('Backstage passes to a TAFKAL80ETC concert', sellIn, quality)
+    return new Item(
+      'Backstage passes to a TAFKAL80ETC concert',
+      sellIn,
+      quality
+    )
   }
-
 }

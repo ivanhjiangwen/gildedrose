@@ -10,10 +10,7 @@ export class Item {
   }
 
   passOneDay() {
-    if (
-      !this.isAgedBrie() &&
-      !this.isBackstagePasses()
-    ) {
+    if (!this.isAgedBrie() && !this.isBackstagePasses()) {
       if (this.quality > 0) {
         if (!this.isSulfuras()) {
           this.quality = this.quality - 1

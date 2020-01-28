@@ -25,7 +25,7 @@ describe('GildedRoseTest', () => {
       ItemFactory.createBackstagePass(15, 20),
       ItemFactory.createBackstagePass(10, 49),
       ItemFactory.createBackstagePass(5, 49),
-      ItemFactory.createBackstagePass(1, 20)
+      ItemFactory.createBackstagePass(1, 20),
     ]
 
     const app = new GildedRose(items)
