@@ -60,9 +60,7 @@ export class Item {
   }
 
   updateSellInAfterOneDay() {
-    if (!this.isSulfuras()) {
-      this.sell_in = this.sell_in - 1
-    }
+    this.sell_in = this.sell_in - 1
   }
 
   updateQualityAfterExpired() {
