@@ -15,6 +15,14 @@ describe('GildedRoseTest', () => {
     expect(app.items[0].sellIn).toEqual(0)
   })
 
+  describe('Conjured', () => {
+    it('decrease quality double times for normal item', () => {
+      const conjured = ItemFactory.createConjured(2, 4)
+      conjured.passOneDay()
+      expect(conjured.quality).toEqual(2)
+    })
+  })
+
   it('should match safety net', () => {
     const items = [
       new Item('+5 Dexterity Vest', 10, 20), //

@@ -1,6 +1,7 @@
 import { AgedBrie } from './AgedBrie'
 import { Sulfuras } from './Sulfuras'
 import { BackstagePass } from './BackstagePass'
+import { Conjured } from './Conjured'
 
 export class ItemFactory {
   static createAgedBrie(sellIn, quality) {
@@ -13,5 +14,9 @@ export class ItemFactory {
 
   static createBackstagePass(sellIn, quality) {
     return new BackstagePass(sellIn, quality)
+  }
+
+  static createConjured(sellIn, quality) {
+    return new Conjured(sellIn, quality)
   }
 }
