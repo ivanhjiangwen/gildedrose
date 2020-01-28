@@ -40,7 +40,7 @@ export class Item {
   }
 
   decreaseQuality(by = 1) {
-    let min = Math.min(this.quality, by)
+    const min = Math.min(this.quality, by)
     this.quality -= min
   }
 }

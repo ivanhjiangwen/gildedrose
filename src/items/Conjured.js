@@ -6,12 +6,10 @@ export class Conjured extends Item {
   }
 
   updateQualityAfterOneDay() {
-    this.decreaseQuality()
-    this.decreaseQuality()
+    this.decreaseQuality(2)
   }
 
   updateQualityAfterExpired() {
-    this.decreaseQuality()
-    this.decreaseQuality()
+    this.decreaseQuality(2)
   }
 }
