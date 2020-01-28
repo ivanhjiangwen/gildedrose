@@ -18,27 +18,9 @@ export class Item {
   }
 
   updateQualityAfterOneDay() {
-    if (!this.isAgedBrie() && !this.isBackstagePasses()) {
-      if (this.quality > 0) {
-        if (!this.isSulfuras()) {
-          this.quality = this.quality - 1
-        }
-      }
-    } else {
-      if (this.quality < 50) {
-        this.quality = this.quality + 1
-        if (this.isBackstagePasses()) {
-          if (this.sellIn < 11) {
-            if (this.quality < 50) {
-              this.quality = this.quality + 1
-            }
-          }
-          if (this.sellIn < 6) {
-            if (this.quality < 50) {
-              this.quality = this.quality + 1
-            }
-          }
-        }
+    if (this.quality > 0) {
+      if (!this.isSulfuras()) {
+        this.quality = this.quality - 1
       }
     }
   }
