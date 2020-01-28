@@ -18,9 +18,7 @@ export class Item {
   }
 
   updateQualityAfterOneDay() {
-    if (this.quality > 0) {
-      this.quality = this.quality - 1
-    }
+    this.decreaseQuality()
   }
 
   toString() {
@@ -32,16 +30,18 @@ export class Item {
   }
 
   updateQualityAfterExpired() {
-    if (this.quality <= 0) {
-      return
-    }
-
-    this.quality = this.quality - 1
+    this.decreaseQuality()
   }
 
   increaseQuality() {
     if (this.quality < 50) {
       this.quality = this.quality + 1
+    }
+  }
+
+  decreaseQuality() {
+    if (this.quality > 0) {
+      this.quality = this.quality - 1
     }
   }
 }
