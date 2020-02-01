@@ -1,7 +1,10 @@
 import { GildedRose } from './gilded-rose'
 import { Item } from './item'
 import { readFileSync } from 'fs'
-import { ItemFactory } from './items/ItemFactory'
+import { AgedBrie } from './items/AgedBrie'
+import { Sulfuras } from './items/Sulfuras'
+import { BackstagePass } from './items/BackstagePass'
+import { Conjured } from './items/Conjured'
 
 describe('GildedRoseTest', () => {
   it('foo', () => {
@@ -17,13 +20,13 @@ describe('GildedRoseTest', () => {
 
   describe('Conjured', () => {
     it('decrease quality double times for normal item before expired', () => {
-      const conjured = ItemFactory.createConjured(2, 4)
+      const conjured = new Conjured(2, 4)
       conjured.passOneDay()
       expect(conjured.quality).toEqual(2)
     })
 
     it('decrease quality double times for normal item after expired', () => {
-      const conjured = ItemFactory.createConjured(0, 5)
+      const conjured = new Conjured(0, 5)
       conjured.passOneDay()
       expect(conjured.quality).toEqual(1)
     })
@@ -32,14 +35,14 @@ describe('GildedRoseTest', () => {
   it('should match safety net', () => {
     const items = [
       new Item('+5 Dexterity Vest', 10, 20), //
-      ItemFactory.createAgedBrie(2, 0),
+      new AgedBrie(2, 0),
       new Item('Elixir of the Mongoose', 5, 7), //
-      ItemFactory.createSulfuras(0, 80),
-      ItemFactory.createSulfuras(-1, 80),
-      ItemFactory.createBackstagePass(15, 20),
-      ItemFactory.createBackstagePass(10, 49),
-      ItemFactory.createBackstagePass(5, 49),
-      ItemFactory.createBackstagePass(1, 20),
+      new Sulfuras(0, 80),
+      new Sulfuras(-1, 80),
+      new BackstagePass(15, 20),
+      new BackstagePass(10, 49),
+      new BackstagePass(5, 49),
+      new BackstagePass(1, 20),
     ]
 
     const app = new GildedRose(items)
